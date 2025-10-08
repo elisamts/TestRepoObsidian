@@ -1,5 +1,5 @@
 name: "Export Obsidian vault to HTML"
-description: "Exports the Obsidian vault to HTML"
+description: "Exports the Obsidian vault to HTML using a Docker container"
 
 inputs:
   vault:
@@ -29,10 +29,16 @@ runs:
         mkdir -p ./.output
 
         if [ -z "${{ inputs.config }}" ]; then
-          docker run --rm -v ${{ inputs.vault }}:/vault -v ./.output:/output KosmosisDire/obsidian-webpage-export:${{ inputs.version }} >> ./.log.txt
+          docker run --rm \
+            -v "${{ inputs.vault }}:/vault" \
+            -v "${{ github.workspace }}/.output:/output" \
+            ghcr.io/kosmosisdire/obsidian-webpage-export:${{ inputs.version }} >> ./.log.txt
         else
-          docker run --rm -v ${{ inputs.vault }}:/vault -v ${{ inputs.config }}:/config.json -v ./.output:/output KosmosisDire/obsidian-webpage-export:${{ inputs.version }} >> ./.log.txt
+          docker run --rm \
+            -v "${{ inputs.vault }}:/vault" \
+            -v "${{ inputs.config }}:/config.json" \
+            -v "${{ github.workspace }}/.output:/output" \
+            ghcr.io/kosmosisdire/obsidian-webpage-export:${{ inputs.version }} >> ./.log.txt
         fi
 
-        echo "output=./.output" >> $GITHUB_OUTPUT
-
+        echo "output=${{ github.workspace }}/.output" >> $GITHUB_OUTPUT
