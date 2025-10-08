@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"197f38b2dd9effdd","type":"text","text":"","x":-320,"y":140,"width":250,"height":60},
+		{"id":"087cf9ac1b5ae544","x":0,"y":-80,"width":400,"height":400,"type":"file","file":"Test.md"},
+		{"id":"07b6a51853ca143c","x":-395,"y":-30,"width":400,"height":400,"color":"4","type":"file","file":"Untitled.md"}
+	],
+	"edges":[
+		{"id":"a2abbcfa71564bbd","fromNode":"197f38b2dd9effdd","fromSide":"right","toNode":"087cf9ac1b5ae544","toSide":"left"}
+	]
+}
