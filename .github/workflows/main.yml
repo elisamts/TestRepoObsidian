@@ -1,40 +1,46 @@
-            - name: Deploy with Spaceship
-  # You may pin to the exact commit or the version.
-  # uses: aitorllj93/spaceship-action@302aad995a5cdbd413417224f137609254361621
-  uses: aitorllj93/spaceship-action@v1.0.0
-  with:
-    # The template to use for the deployment.
-    spaceship_template: # optional, default is aitorllj93/astro-theme-spaceship
-    # The template branch to use for the deployment.
-    spaceship_template_branch: # optional, default is main
-    # The site name to use in the site metadata.
-    site: 
-    # The base URL for the site.
-    base: # optional
-    # The default locale for the site.
-    default_locale: # optional, default is en
-    # The title to use in the site metadata.
-    title: 
-    # The description to use in the site metadata.
-    description: # optional
-    # The SVG logo to use in the site metadata.
-    logo: # optional
-    # The author name to use in the site metadata.
-    author: # optional
-    # Enable the article author feature.
-    features_article_author_enabled: # optional, default is true
-    # Enable the article date feature.
-    features_article_date_enabled: # optional, default is true
-    # The right sidebar display mode. Options are "column" or "tabset".
-    features_right_mode: # optional, default is tabset
-    # Enable the right sidebar map feature.
-    features_right_map_enabled: # optional, default is true
-    # Enable the right sidebar graph feature.
-    features_right_graph_enabled: # optional, default is true
-    # Enable the right sidebar table of contents feature.
-    features_right_toc_enabled: # optional, default is true
-    # Enable the right sidebar links feature.
-    features_right_links_enabled: # optional, default is true
-    # Enable the right sidebar backlinks feature.
-    features_right_backlinks_enabled: # optional, default is true
-          
+name: "Export Obsidian vault to HTML"
+description: "Exports the Obsidian vault to HTML"
+
+inputs:
+  vault:
+    description: "Path to the Obsidian vault"
+    required: true
+    default: "."
+  config:
+    description: "Path to the configuration file"
+    required: false
+  version:
+    description: "Version of the plugin"
+    required: false
+    default: "latest"
+    
+outputs:
+  output:
+    description: "Path to the output folder"
+    value: ${{ steps.run-docker.outputs.output }}
+    
+runs:
+  using: "composite"
+  
+  steps:
+    - name: Run docker container
+      id: run-docker
+      shell: bash
+    
+      run: |
+        set +e
+
+        mkdir -p ./.output
+
+        if [ -z "${{ inputs.config }}" ]; then
+          docker run --rm -v ${{ inputs.vault }}:/vault -v ./.output:/output KosmosisDire/obsidian-webpage-export:${{ inputs.version }} >> ./.log.txt
+        else
+          docker run --rm -v ${{ inputs.vault }}:/vault -v ${{ inputs.config }}:/config.json -v ./.output:/output KosmosisDire/obsidian-webpage-export:${{ inputs.version }} >> ./.log.txt
+        fi
+
+        cat ./.log.txt
+
+        if [ $? -eq 137 ]; then
+          exit 0
+          echo "output=./.output" >> $GITHUB_OUTPUT
+        fi
