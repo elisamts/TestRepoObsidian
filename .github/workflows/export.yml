@@ -1,0 +1,17 @@
+name: Export Vault
+
+on:
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Export Obsidian vault
+        uses: ./.github/actions/export-obsidian-html
+        with:
+          vault: ./my-vault
+          config: ./config.json
+          version: latest
