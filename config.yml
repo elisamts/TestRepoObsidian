@@ -1,3 +1,4 @@
 #vault_path: vault
 #output_path: output
-site_name: "My Obsidian Site"
+site_name: "AI Notes - Obsidian Site"
+obsidian_entrypoint_path_str: Sample.md
