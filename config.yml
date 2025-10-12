@@ -1,4 +1,2 @@
-site:
-  name: "My Obsidian Site"
-
+site_name: "My Obsidian Site"
 obsidian_entrypoint_path_str: vault/Sample.md
