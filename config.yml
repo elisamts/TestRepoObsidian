@@ -1,4 +1,11 @@
-copy_static: true
+vault:
+  path: vault
 
-site_name: "AI Notes - Obsidian Site"
+output:
+  path: output
+  copy_static_files: true  # ✅ This is the correct key
+
+site:
+  name: "My Obsidian Site"
+
 obsidian_entrypoint_path_str: vault/Sample.md
