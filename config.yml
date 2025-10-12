@@ -1,4 +1,4 @@
-#vault_path: vault
-#output_path: output
+copy_static: true
+
 site_name: "AI Notes - Obsidian Site"
 obsidian_entrypoint_path_str: vault/Sample.md
