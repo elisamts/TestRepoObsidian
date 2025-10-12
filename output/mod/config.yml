@@ -98,7 +98,7 @@ module_list:
     - Optionally removes previous output if it exists in the target directories
     name: prepare_output_folders
 navbar_links: []
-obsidian_entrypoint_path_str: vault/Sample.md
+obsidian_entrypoint_path_str: Sample.md
 obsidian_folder_path_str: <DEPRECATED>
 resolve_output_file_links: true
 site_name: My Obsidian Site

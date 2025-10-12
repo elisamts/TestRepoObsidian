@@ -27,7 +27,7 @@ jobs:
         run: pip install obsidianhtml
 
       - name: Convert Obsidian vault to HTML
-        run: obsidianhtml convert vault/ output/
+        run: obsidianhtml convert -i ./custom_config.yml
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4

@@ -1,23 +1,14 @@
 {
-  "output/md/index.md": {
+  "2024-08-12.md": {
     "tags": []
   },
-  "output/md/not_created.md": {
+  "Sample.md": {
     "tags": []
   },
-  "output/md/vault/Test.md": {
+  "Test.md": {
     "tags": []
   },
-  "vault/2024-08-12.md": {
-    "tags": []
-  },
-  "vault/Sample.md": {
-    "tags": []
-  },
-  "vault/Test.md": {
-    "tags": []
-  },
-  "vault/Untitled.md": {
+  "Untitled.md": {
     "tags": []
   },
   "not_created.md": {}

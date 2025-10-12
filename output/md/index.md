@@ -3,4 +3,4 @@ tags: []
 ---
 # index   
    
-this is my sample note [Test](./vault/Test.md)   
+this is my sample note [Test](./Test.md)   

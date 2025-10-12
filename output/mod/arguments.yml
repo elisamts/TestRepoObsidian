@@ -1,6 +1,5 @@
 command:
 - convert
-- vault/
-- output/
-config_path: config.yml
-literals: {}
+config_path: ./custom_config.yml
+literals:
+  -i: ./custom_config.yml
