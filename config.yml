@@ -1,7 +1,3 @@
-
-output:
-  copy_static_files: true  # ✅ This is the correct key
-
 site:
   name: "My Obsidian Site"
 
