@@ -1,0 +1,14 @@
+            - name: hugo-obsidian
+  # You may pin to the exact commit or the version.
+  # uses: jackyzha0/hugo-obsidian@a7bc6ab3db36532e1827610a8ffcb081794ef82b
+  uses: jackyzha0/hugo-obsidian@v2.20
+  with:
+    # Input Directory
+    input: # optional, default is .
+    # Output Directory
+    output: # optional, default is .
+    # Index content
+    index: # optional, default is false
+    # Root of Repository
+    root: # optional, default is .
+          
