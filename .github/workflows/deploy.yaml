@@ -1,0 +1,35 @@
+name: Convert Obsidian Vault to HTML
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install obsidian-html
+        run: pip install obsidianhtml
+
+      - name: Convert Obsidian vault to HTML
+        run: obsidianhtml convert vault/ output/
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output/
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
