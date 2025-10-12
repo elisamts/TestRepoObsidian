@@ -3,3 +3,4 @@ obsidian_entrypoint_path_str: Sample.md
 toggles:
   # Whether the html links are made relative, instead of absolute.
   relative_path_html: true
+  relative_path_md: true

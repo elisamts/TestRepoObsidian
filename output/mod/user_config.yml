@@ -2,3 +2,4 @@ obsidian_entrypoint_path_str: Sample.md
 site_name: My Obsidian Site
 toggles:
   relative_path_html: true
+  relative_path_md: true
