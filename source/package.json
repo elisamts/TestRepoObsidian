@@ -1,0 +1,12 @@
+{
+  "name": "my-quartz-site",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "npx quartz build",
+    "dev": "npx quartz dev"
+  },
+  "dependencies": {
+    "quartz": "^4.0.0"
+  }
+}
