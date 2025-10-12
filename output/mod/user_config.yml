@@ -1,2 +1,4 @@
 obsidian_entrypoint_path_str: vault/Sample.md
-site_name: AI Notes - Obsidian Site
+site_name: My Obsidian Site
+toggles:
+  relative_path_html: true

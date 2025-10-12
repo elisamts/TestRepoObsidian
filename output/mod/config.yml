@@ -101,7 +101,7 @@ navbar_links: []
 obsidian_entrypoint_path_str: vault/Sample.md
 obsidian_folder_path_str: <DEPRECATED>
 resolve_output_file_links: true
-site_name: AI Notes - Obsidian Site
+site_name: My Obsidian Site
 toggles:
   allow_duplicate_filenames_in_root: true
   compile_html: true
@@ -301,7 +301,7 @@ toggles:
   no_tabs: true
   preserve_inline_tags: true
   process_all: false
-  relative_path_html: false
+  relative_path_html: true
   relative_path_md: true
   slugify_html_links: false
   stdout_current_file: false

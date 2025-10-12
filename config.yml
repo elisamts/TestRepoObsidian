@@ -2,4 +2,4 @@ site_name: "My Obsidian Site"
 obsidian_entrypoint_path_str: vault/Sample.md
 toggles:
   # Whether the html links are made relative, instead of absolute.
-  relative_path_html: True
+  relative_path_html: true

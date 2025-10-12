@@ -1,4 +1,13 @@
 {
+  "output/md/index.md": {
+    "tags": []
+  },
+  "output/md/not_created.md": {
+    "tags": []
+  },
+  "output/md/vault/Test.md": {
+    "tags": []
+  },
   "vault/2024-08-12.md": {
     "tags": []
   },
